@@ -19,10 +19,15 @@ This document walks through deploying the Singuron marketing site (`apps/web`) t
    - **Framework Preset:** Next.js
    - **Root Directory:** `apps/web`
    - **Build Command:** `pnpm build`
-   - **Output Directory:** `out`
+   - **Output Directory:** leave as default (do NOT set to `out`)
    - **Install Command:** `pnpm install`
 4. No environment variables are required for the static marketing site.
 5. Click **Deploy**.
+
+> Note: This project uses `output: "export"` in `next.config.js`. Vercel's Next.js
+> builder detects this automatically and serves the exported static files. Do NOT
+> override the Output Directory to `out` — doing so makes Vercel look for
+> `routes-manifest.json` in the wrong place and the deploy fails.
 
 ## Step 2: Configure custom domain
 
