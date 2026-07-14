@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "slug": "finance",
+      "name": "Finance Agent",
+      "tagline": "Structured financial analysis powered by your own AI.",
+      "type": "hosted",
+      "status": "live",
+      "version": "0.1.0",
+      "route": "/finance",
+      "enabled": true,
+      "demo_video_url": "/videos/finance-demo.mp4"
+    },
+    {
+      "slug": "video-editor",
+      "name": "Video Editor",
+      "tagline": "Intelligent video editing on your desktop.",
+      "type": "desktop",
+      "status": "coming-soon",
+      "version": "0.0.0",
+      "route": "/video-editor",
+      "enabled": true,
+      "demo_video_url": "/videos/video-editor-demo.mp4"
+    }
+  ]
+}

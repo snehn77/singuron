@@ -1,0 +1,62 @@
+---
+title: "Introducing Singuron"
+date: "2026-06-15"
+excerpt: "Why we are building AI agents differently — with transparency, ownership, and restraint."
+---
+
+# Introducing Singuron
+
+Today we are announcing Singuron, an AI agent platform built on a simple principle: the person using the tool should own the tool. We believe AI agents should be infrastructure you control, not services you rent. You bring your own Anthropic key, keep your own data, and run your own workflows.
+
+## The problem with AI wrappers
+
+Most AI products today sit between you and the model provider. They hold your API calls hostage behind subscriptions, store your conversations for training, and optimize for engagement rather than utility. The result is that using AI feels like using someone else's computer — you are always a guest.
+
+We think this is wrong. When you pay for API access, the intelligence belongs to you. The agent should be a transparent conduit: it adds structure, domain knowledge, and a clean interface — then gets out of the way.
+
+## Why BYOK matters
+
+When you supply your own Anthropic API key, you maintain a direct relationship with the model provider. Your data stays between you and them. We never store conversation content, never train on your data, and never sit between you and the intelligence you are paying for.
+
+The key is encrypted at rest using a libsodium sealed box. It is decrypted only in memory, at call time, for the duration of a single API request. Then it is gone. If you delete your key, we hard-delete the ciphertext — no soft delete, no backup retention.
+
+## Two delivery models
+
+Singuron ships agents in two forms:
+
+- **Hosted agents** run in your browser. Open a tab, connect your key, start working. No install required.
+- **Desktop agents** are Windows apps built with Tauri 2. They install on your machine and connect back only for authentication and usage telemetry. Everything else runs locally.
+
+Both share the same security model, the same telemetry pipeline, and the same respect for your time and data.
+
+## Transparency as architecture
+
+Every agent run is logged with metadata: duration, token counts, model version, a SHA-256 hash of the prompt. Never the content itself. This telemetry exists so we can detect behavioral drift, measure reliability, and improve the platform — without ever seeing what you are working on.
+
+The event schema is the same across hosted and desktop surfaces. This is deliberate: it means we can compute behavioral signatures and detect anomalies across the entire fleet, without any surface having privileged access to user content.
+
+## The research behind it
+
+Singuron's telemetry is not an afterthought — it is built on a peer-reviewed research framework called **Selective Rigidity**, published in 2026 at the ICML FinAgent Workshop, the COLT LAW track, and IEEE AICSIP.
+
+The problem it addresses: agents operating over long horizons are vulnerable to adversarial social pressure — gaslighting, authority override, manufactured consensus, and memory poisoning. Our impossibility result (Theorem 1) proves that any safeguard observing only an agent's current output cannot exceed a Selective Rigidity Score of ¼ + ε. You need a signal on the agent's identity *trajectory over time* to do better.
+
+Our answer is **ICC + TSM**. The Identity Continuity Constraint is a three-layer gate that blocks identity-violating updates while accepting legitimate corrections. The Temporal Self-Model tracks how identity evolves over time; its prediction-error spikes and cumulative-drift signals are what let ICC break the ¼ ceiling. Across 240 runs, ICC+TSM reached SRS = 0.260 (95% CI 0.212–0.306) — the only method to exceed the stateless ceiling while keeping AcceptRate above 0.75. We evaluate on the **Identity Erosion Chamber**, a 70-turn adversarial benchmark released open-source under MIT / CC-BY-4.0.
+
+Every Singuron agent is the first fleet validated under this framework.
+
+## What comes next
+
+Our first hosted agent — the Finance Agent — delivers structured financial analysis powered by your own AI. A desktop video editor is in development. More agents will follow, one vertical at a time. Each is built on the same platform, the same telemetry, and the same philosophy: do one thing well, give you full control, and get out of the way.
+
+## Tell us what you think
+
+If you want to try the Finance Agent, bring your Anthropic key and start. If you want to follow along, read this blog. If you want to talk, write to [asi.research.development@gmail.com](mailto:asi.research.development@gmail.com).
+
+## Citation
+
+Please cite this work as:
+
+```
+Singuron, "Introducing Singuron", Singuron Blog, June 2026.
+```

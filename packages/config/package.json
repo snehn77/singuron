@@ -1,0 +1,9 @@
+{
+  "name": "@singuron/config",
+  "private": true,
+  "version": "0.0.0",
+  "files": ["tailwind.config.ts", "tsconfig.json"],
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
