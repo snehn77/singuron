@@ -13,9 +13,10 @@ const config: Config = {
         sans: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
-        cream: "#e5e7eb",
+        cream: "#FBEDE1",
+        card: "#FFF9F3",
         ink: "#1A1A1A",
-        accent: "#4A5568",
+        accent: "#B5674A",
       },
       maxWidth: {
         prose: "65ch",

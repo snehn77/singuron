@@ -6,9 +6,9 @@ import { PageTransition } from "@/components/PageTransition";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://singuron.com"),
-  title: "Singuron — AI Agents That Work For You",
+  title: "Singuron",
   description:
-    "A bring-your-own-key AI agent platform. Hosted agents in the browser, desktop agents on your machine. You keep your key and your data — we never store content or train on it.",
+    "The reliability layer that keeps an AI agent's identity stable over long-horizon autonomy. Model-agnostic, write-time enforcement with an open adversarial benchmark.",
   keywords: [
     "AI agents",
     "BYOK",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "TSM",
   ],
   openGraph: {
-    title: "Singuron — AI Agents That Work For You",
+    title: "Singuron",
     description:
       "A bring-your-own-key AI agent platform. Your key, your data. Grounded in peer-reviewed research on agent identity stability.",
     url: "https://singuron.com",

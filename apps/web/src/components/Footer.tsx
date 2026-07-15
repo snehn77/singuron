@@ -3,36 +3,32 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer className="border-t border-ink/5 mt-32">
-      <div className="mx-auto max-w-5xl px-6 py-16 flex flex-col md:flex-row justify-between items-start gap-8 text-sm text-ink/50">
-        <div>
-          <Link href="/" className="font-sans font-semibold text-ink tracking-widest uppercase text-xs hover:opacity-70 transition-opacity">
-            Singuron
+      <div className="mx-auto max-w-5xl px-6 py-8 flex flex-wrap items-center justify-between gap-x-8 gap-y-4 text-[13px] text-ink/50">
+        <Link
+          href="/"
+          className="font-sans font-semibold text-ink tracking-widest uppercase text-xs hover:opacity-70 transition-opacity"
+        >
+          Singuron
+        </Link>
+
+        <nav className="flex flex-wrap items-center gap-x-6 gap-y-2">
+          <Link href="/vertex" className="hover:text-ink transition-colors">
+            Vertex
           </Link>
-        </div>
-        <div className="flex gap-12 text-[13px]">
-          <div className="flex flex-col gap-3">
-            <Link href="/products/finance" className="hover:text-ink transition-colors duration-200">
-              Finance Agent
-            </Link>
-            <Link href="/products/video-editor" className="hover:text-ink transition-colors duration-200">
-              Video Editor
-            </Link>
-          </div>
-          <div className="flex flex-col gap-3">
-            <Link href="/blog" className="hover:text-ink transition-colors duration-200">
-              Blog
-            </Link>
-            <Link href="/about" className="hover:text-ink transition-colors duration-200">
-              About
-            </Link>
-            <Link href="/contact" className="hover:text-ink transition-colors duration-200">
-              Contact
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="mx-auto max-w-5xl px-6 pb-10 text-xs text-ink/30">
-        © {new Date().getFullYear()} Singuron. All rights reserved.
+          <Link href="/research" className="hover:text-ink transition-colors">
+            Research &amp; Development
+          </Link>
+          <Link href="/news" className="hover:text-ink transition-colors">
+            News
+          </Link>
+          <Link href="/contact" className="hover:text-ink transition-colors">
+            Contact
+          </Link>
+        </nav>
+
+        <span className="text-xs text-ink/30">
+          © {new Date().getFullYear()} Singuron
+        </span>
       </div>
     </footer>
   );
